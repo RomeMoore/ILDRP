@@ -4898,11 +4898,18 @@ $('#search').keyup(function() {
 });
 </script>
 <script>
-function heatCheck(){
-	  var unli = $('#unlimited tr:visible').length;
-	  var mited = unli-1;
-	  console.log(unli);
-	  }
+window.onload = function(){  
+
+    var url = document.location.toString();
+    if (url.match('#')) {
+        $('.nav-tabs a[href=#' + url.split('#')[1] + ']').tab('show');
+    }
+
+    //Change hash for page-reload
+    $('.nav-tabs a[href=#' + url.split('#')[1] + ']').on('shown', function (e) {
+        window.location.hash = e.target.hash;
+    }); 
+} 
 </script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="main.js"></script>
