@@ -122,3 +122,7 @@ div.pager span.active {
 	margin-left: 10%;
 	margin-right: 10%;
 }
+input[placeholder]{
+	color:grey;
+	text-align: center;
+}
